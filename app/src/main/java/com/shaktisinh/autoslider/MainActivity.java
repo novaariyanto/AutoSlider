@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     List<Integer> color;
     List<String> colorName;
+    List<String> image;
 
     ViewPager viewPager;
     TabLayout indicator;
@@ -37,7 +38,13 @@ public class MainActivity extends AppCompatActivity {
         colorName.add("GREEN");
         colorName.add("BLUE");
 
-        viewPager.setAdapter(new SliderAdapter(this, color, colorName));
+        image = new ArrayList<>();
+        image.add("https://raw.githubusercontent.com/square/picasso/master/website/static/sample.png");
+        image.add("https://miro.medium.com/max/1080/1*4TUhB8V3gt30oV0jX9yOTQ.png");
+        image.add("https://miro.medium.com/max/1600/1*VjguwplRkc23BmGfzWB0tQ.png");
+
+
+        viewPager.setAdapter(new SliderAdapter(this, color, colorName,image));
         indicator.setupWithViewPager(viewPager, true);
 
         Timer timer = new Timer();
